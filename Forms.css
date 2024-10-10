@@ -1,0 +1,41 @@
+.card{
+    display: flex;
+}
+
+.form-group{
+    margin-bottom: 10px;
+}
+
+.container{
+    margin-left: 34%;
+    margin-top: 6%;
+    width: 380px;
+    border: none;
+    border-radius: 15px;
+    padding: 2px;
+    background-color: #fff;
+    position: relative;
+    height: 370px;
+}
+
+#back,#submit{
+    display: flex;
+    margin: 16px;
+   }
+   .button-container {
+    display: flex;
+    gap: 150px; 
+  }
+@media screen and (max-width: 556px)  {
+    .container{
+        margin-left: 5%;
+        margin-top: 3%;
+    }
+    
+   }
+   @media screen and (min-width: 557px) and (max-width: 820px){
+    .container{
+        margin-left: 5%;
+        margin-top: 3%; 
+    }
+   }

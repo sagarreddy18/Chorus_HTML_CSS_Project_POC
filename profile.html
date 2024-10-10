@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./profile.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Profile</title>
+</head>
+
+<body>
+  <div class="card shadow p-3 bg-white rounded fallingCard">
+    <div class="upper">
+      <img src="https://i.imgur.com/Qtrsrk5.jpg" class="img-fluid">
+    </div>
+    <div class="user text-center">
+      <div class="profile">
+        <img
+          src="https://media.licdn.com/dms/image/v2/D4E03AQE6aqH4pXa78Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1715232241875?e=2147483647&v=beta&t=m7sU0BuU_Yo0hc6BHWb2NyJ5_IFH_2Fhfk7VBDB1iOo"
+          class="rounded-circle" width="80">
+      </div>
+    </div>
+    <div class="mt-5 text-center">
+      <h4 class="mb-0">Sagar Reddy Thoutu</h4>
+      <span class="text-muted d-block mb-2">Software Engineer</span>
+      <button class="btn btn-primary btn-sm follow falling-button" onclick="buttonClicked()">Follow</button>
+      <div class="d-flex justify-content-between align-items-center mt-4 px-4">
+        <div class="stats">
+          <h6 class="mb-0">Followers</h6>
+          <span class="followCount">8,797</span>
+        </div>
+        <div class="stats">
+          <h6 class="mb-0">Projects</h6>
+          <span>20</span>
+        </div>
+        <div class="stats">
+          <h6 class="mb-0">Ranks</h6>
+          <span>18</span>
+        </div>
+      </div>
+      <button id="openPage3" class="btn btn-primary">View Projects</button>
+    </div>
+  </div>
+  <div>
+
+  </div>
+  <div class="button-container">
+    <button id="back" class="btn btn-secondary">Back</button>
+    <button id="ask" class="btn btn-secondary">Ask Questions</button>
+  </div>
+  <script>
+    document.getElementById('openPage3').onclick = function () {
+      window.location.href = 'ProjectsList.html';
+    };
+
+    function buttonClicked() {
+      const button = document.querySelector('.follow');
+      const button2 = document.querySelector('.followCount');
+      if (button.innerText === 'Follow') {
+        button.innerText = 'Unfollow';
+        button2.innerText = '8,798';
+      } else {
+        button.innerText = 'Follow';
+        button2.innerText = '8,797';
+      }
+
+    }
+    document.getElementById('back').onclick = function () {
+      window.location.href = 'Home.html';
+    };
+    document.getElementById('ask').onclick = function () {
+      window.location.href = 'Forms.html';
+    };
+  </script>
+  <footer class="footer">
+    <p>© 2024 Sagar Reddy | All rights reserved</p>
+  </footer>
+</body>
+
+</html>

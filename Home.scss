@@ -1,0 +1,168 @@
+
+$bg-colour: #3498db;
+$text-colour: #333;
+$white: white;
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$font-stack: 'Arial', sans-serif;
+
+@mixin box-shadow($shadow) {
+  box-shadow: $shadow;
+}
+
+@mixin border-radius($radius: 5px) {
+  border-radius: $radius;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-stack;
+}
+
+body {
+  background-color: #f0f0f0;
+  color: $text-colour;
+}
+.marq{
+    margin-top: 15px;
+    font-size: 2rem;
+}
+
+header {
+  background-color: $bg-colour;
+  color: $white;
+  padding: 20px;
+  text-align: center;
+  @include box-shadow($box-shadow);
+
+  h1 {
+    &:hover {
+      color: red;
+    }
+  }
+}
+
+nav {
+  background-color: #2980b9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+
+  ul li {
+    display: inline;
+  }
+
+  ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #1abc9c;
+      border-radius: 5px;
+    }
+  }
+
+  .menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
+  }
+}
+
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: $white;
+  @include box-shadow($box-shadow);
+  @include border-radius(8px);
+}
+
+footer {
+  background-color: $bg-colour;
+  color: $white;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  @include box-shadow(0 -4px 8px rgba(0, 0, 0, 0.1));
+}
+
+@mixin media-breakpoint($width) {
+  @media (max-width: $width) {
+    @content;
+  }
+}
+
+@include media-breakpoint(768px) {
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #2980b9;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 10px 0;
+  }
+
+nav .menu-icon {
+    display: block;
+  }
+
+  main {
+    padding: 15px;
+    margin-top: 10px;
+  }
+  .marq{
+    margin-top: 35px;
+  }
+}
+
+@include media-breakpoint(480px) {
+  header {
+    padding: 15px;
+  }
+
+  nav ul {
+    padding: 0;
+  }
+  nav .menu-icon {
+    display: block;
+  }
+
+  main {
+    margin-top: 10px;
+    padding: 10px;
+  }
+
+  footer {
+    padding: 10px;
+  }
+  .marq{
+    margin-top: 35px;
+  }
+  
+}
